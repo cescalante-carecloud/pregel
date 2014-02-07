@@ -1,4 +1,4 @@
-require 'helper'
+require File.expand_path("../helper.rb", __FILE__)
 
 describe Pregel::Coordinator do
   it 'should not allow empty graphs' do

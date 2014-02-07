@@ -1,4 +1,4 @@
-require  './lib/pregel'
+require File.expand_path("../../lib/pregel.rb", __FILE__)
 
 include Pregel
 

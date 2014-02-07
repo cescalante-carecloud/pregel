@@ -1,6 +1,6 @@
-require_relative "pregel/vertex"
-require_relative 'pregel/worker'
-require_relative 'pregel/coordinator'
+require File.expand_path("../pregel/vertex.rb", __FILE__)
+require File.expand_path("../pregel/worker.rb", __FILE__)
+require File.expand_path("../pregel/coordinator.rb", __FILE__)
 
 require 'singleton'
 

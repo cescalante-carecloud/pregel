@@ -1,4 +1,4 @@
-require 'helper'
+require File.expand_path("../helper.rb", __FILE__)
 
 describe Pregel::Vertex do
   it 'should create a vertex with id, value, and edges' do
