@@ -1,4 +1,4 @@
-require 'lib/pregel'
+require  './lib/pregel'
 
 include Pregel
 
