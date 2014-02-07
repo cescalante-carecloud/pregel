@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Worker do
+describe Pregel::Worker do
 
   let(:graph) do
     [

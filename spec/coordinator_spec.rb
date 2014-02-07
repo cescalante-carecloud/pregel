@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Coordinator do
+describe Pregel::Coordinator do
   it 'should not allow empty graphs' do
     lambda { Coordinator.new([]) }.should raise_error
   end

@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Vertex do
+describe Pregel::Vertex do
   it 'should create a vertex with id, value, and edges' do
     lambda { Vertex.new(:a, 10, :b) }.should_not raise_error
     lambda { Vertex.new(:a, 10, :b, :c) }.should_not raise_error
