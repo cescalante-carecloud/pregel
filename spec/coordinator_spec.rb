@@ -24,6 +24,8 @@ describe Pregel::Coordinator do
   it 'should schedule workers to run until there are no active vertices' do
     c = Coordinator.new(graph)
     c.run
+    a = c.to_h
+    puts a
 
     c.workers.each do |w|
       w.vertices.each do |v|
@@ -31,7 +33,7 @@ describe Pregel::Coordinator do
       end
     end
   end
-
+=begin
   context 'PageRank' do
     class PageRankVertex < Vertex
       def compute
@@ -89,7 +91,7 @@ describe Pregel::Coordinator do
       end
     end
   end
-
+=end
   it 'should parition nodes by hashing the node id'
   it 'should allow scheduling multiple partitions to a single worker'
 end
