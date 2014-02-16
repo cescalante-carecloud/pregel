@@ -29,5 +29,15 @@ module Pregel
         break if @workers.select {|w| w.active > 0}.size.zero?
       end
     end
+
+    def to_h
+      mini = {}
+      @workers.each do |w|
+          w.vertices.each do |v|
+          mini[v.id] = v.value
+        end
+      end
+      mini
+    end
   end
 end
