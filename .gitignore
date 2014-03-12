@@ -1,3 +1,7 @@
 pkg/*
 *.gem
 .bundle
+
+data/user_nodes.csv
+
+data/user_rels.csv
