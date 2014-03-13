@@ -5,3 +5,5 @@ pkg/*
 data/user_nodes.csv
 
 data/user_rels.csv
+
+output/user_nodes.csv
