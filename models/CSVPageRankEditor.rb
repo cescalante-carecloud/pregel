@@ -31,15 +31,19 @@ class CSVPageRankEditor
 
   def write(hash_o_values, nodesfile)
     @node_reader = File.new(DATAPATH + nodesfile, "r")
-    @node_writer = File.new(OUTPUTPATH + nodesfile, "w+")
-    
-    data = @node_reader.gets.split('|', 2)
-    @node_writer.puts(data[0] + "|pagerank|" + data[1])
+    @node_writer = File.new(OUTPUTPATH + nodesfile, "w")
+    firstline = @node_reader.gets
 
+    overwrite = false unless firstline.match('pagerank') != ""
+
+    data = [firstline.split('|',3)[0], firstline.split('|',3)[2]] if overwrite
+    data = firstline.split('|', 2) unless overwrite
+    @node_writer.puts(data[0] + "|pagerank|" + data[1])
     @node_reader.each do |line|
-      data = line.split('|', 2)
-      new_line = data[0] + "|" + hash_o_values[data[0].to_i].to_s + "|" + data[1]
-      @node_writer.puts(new_line)
+      data = [line.split('|',3)[0], line.split('|',3)[2]] if overwrite
+      data = line.split('|', 2) unless overwrite
+      @node_writer.puts(data[0] + "|" + hash_o_values[data[0].to_i].to_s + "|" + data[1])
     end
   end
+
 end
