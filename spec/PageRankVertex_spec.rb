@@ -18,12 +18,9 @@ describe PageRankVertex do
         (v.value * 100).to_i.should == 33
         puts v.id.to_s + "\t\t" + v.value.to_s + "\n"
       end
-    end
-
-    circle.write(c.to_h, "user_nodes.csv")
-  
+    end  
   end
-
+  
   it 'should calculate PageRank of arbitrary graph' do
     arbitrary = CSVPageRankEditor.new("data/arbitrary.csv")
     graph = []
